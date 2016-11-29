@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+	<context:annotation-config></context:annotation-config>
+	<task:annotation-driven />
+	<context:component-scan base-package="com.icoffee.weixin.timer"/>
+	<context:component-scan base-package="com.icoffee.weixin.service"/>
+	<bean id="appid" class="java.lang.String" scope="singleton">
+		<constructor-arg type="java.lang.String"
+			value="wxa1a8fc745855c04d">
+		</constructor-arg>
+	</bean>
+	<bean id="appsecret" class="java.lang.String">
+		<constructor-arg type="java.lang.String"
+			value="efdc85357888bed49f6797dced8074bf">
+		</constructor-arg>
+	</bean>
+    <bean id="weixinMessageCastorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
+    	<property name="mappingLocation" value="classpath:castor-mapping.xml" />
+    </bean>
+</beans>

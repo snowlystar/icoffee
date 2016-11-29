@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+	<description>Basic mapping example</description>
+	<class name="com.icoffee.weixin.server.WeixinMessage"
+		auto-complete="true">
+		<map-to xml="xml" />
+		<field name="createTime" type="java.lang.Long">
+			<bind-xml name="CreateTime" node="element" />
+		</field>
+		<field name="latitude" type="java.lang.Double">
+			<bind-xml name="Latitude" node="element" />
+		</field>
+		<field name="longitude" type="java.lang.Double">
+			<bind-xml name="Longitude" node="element" />
+		</field>
+		<field name="precision" type="java.lang.Double">
+			<bind-xml name="Precision" node="element" />
+		</field>
+	</class>
+</mapping>
