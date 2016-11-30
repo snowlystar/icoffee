@@ -13,7 +13,7 @@
 	<task:annotation-driven />
 	<context:component-scan base-package="com.icoffee.weixin.timer"/>
 	<context:component-scan base-package="com.icoffee.weixin.service"/>
-	<bean id="appid" class="java.lang.String" scope="singleton">
+	<bean id="appid" class="java.lang.String">
 		<constructor-arg type="java.lang.String"
 			value="wxa1a8fc745855c04d">
 		</constructor-arg>

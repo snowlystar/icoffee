@@ -74,6 +74,6 @@ public class WeixinController {
 		System.out.println(msg.getFromUserName());
 		
 		// messageStore.append(msg);
-		response.getWriter().println("");
+		response.getWriter().println(msg.getFromUserName());
 	}
 }

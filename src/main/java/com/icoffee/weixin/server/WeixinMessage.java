@@ -27,7 +27,7 @@ package com.icoffee.weixin.server;
 public class WeixinMessage {
 	private Long createTime;
 	private String toUserName, fromUserName, msgType, content, msgId, picUrl, mediaId, recognition,
-	thumbMediaId, Format, ticket, eventKey;
+	thumbMediaId, Format, ticket, eventKey, event;
 	private Double latitude, longitude, precision;
 	public String getToUserName() {
 		return toUserName;
@@ -132,5 +132,11 @@ public class WeixinMessage {
 	}
 	public void setPrecision(Double precision) {
 		this.precision = precision;
+	}
+	public String getEvent() {
+		return event;
+	}
+	public void setEvent(String event) {
+		this.event = event;
 	}
 }

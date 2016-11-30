@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * <xml>
+ <ToUserName><![CDATA[toUser]]></ToUserName>
+ <FromUserName><![CDATA[fromUser]]></FromUserName>
+ <CreateTime>1348831860</CreateTime>
+ <MsgType><![CDATA[text]]></MsgType>
+ <Event><![CDATA[subscribe]]></Event>
+ <Content><![CDATA[this is a test]]></Content>
+ <MsgId>1234567890123456</MsgId>
+  <PicUrl><![CDATA[this is a url]]></PicUrl>
+  <MediaId><![CDATA[media_id]]></MediaId>
+  <Recognition><![CDATA[腾讯微信团队]]></Recognition>
+  <ThumbMediaId><![CDATA[thumb_media_id]]></ThumbMediaId>
+ <Format><![CDATA[Format]]></Format>
+ <Ticket><![CDATA[TICKET]]></Ticket>
+ <EventKey><![CDATA[qrscene_123123]]></EventKey>
+ <Latitude>23.137466</Latitude>
+<Longitude>113.352425</Longitude>
+<Precision>119.385040</Precision>
+ </xml>
+-->
 <mapping>
 	<description>Basic mapping example</description>
 	<class name="com.icoffee.weixin.server.WeixinMessage"
 		auto-complete="true">
 		<map-to xml="xml" />
+		<field name="toUserName" type="string">
+			<bind-xml name="ToUserName" node="element" />
+		</field>
+		<field name="fromUserName" type="string">
+			<bind-xml name="FromUserName" node="element" />
+		</field>
+		<field name="MsgType" type="string">
+			<bind-xml name="MsgType" node="element" />
+		</field>
+		<field name="Event" type="string">
+			<bind-xml name="Event" node="element" />
+		</field>
+		<field name="Content" type="string">
+			<bind-xml name="Content" node="element" />
+		</field>
+		<field name="MsgId" type="string">
+			<bind-xml name="MsgId" node="element" />
+		</field>
+		
+		<field name="PicUrl" type="string">
+			<bind-xml name="PicUrl" node="element" />
+		</field>						
+		<field name="MediaId" type="string">
+			<bind-xml name="MediaId" node="element" />
+		</field>
+		<field name="Recognition" type="string">
+			<bind-xml name="Recognition" node="element" />
+		</field>
+		<field name="ThumbMediaId" type="string">
+			<bind-xml name="ThumbMediaId" node="element" />
+		</field>
+		<field name="Format" type="string">
+			<bind-xml name="Format" node="element" />
+		</field>
+		<field name="Ticket" type="string">
+			<bind-xml name="Ticket" node="element" />
+		</field>
+		<field name="EventKey" type="string">
+			<bind-xml name="EventKey" node="element" />
+		</field>
 		<field name="createTime" type="java.lang.Long">
 			<bind-xml name="CreateTime" node="element" />
 		</field>
