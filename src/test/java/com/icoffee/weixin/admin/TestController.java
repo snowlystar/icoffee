@@ -24,7 +24,7 @@ import com.icoffee.weixin.menu.Button;
 import com.icoffee.weixin.menu.ClickButton;
 import com.icoffee.weixin.menu.ViewButton;
 import com.icoffee.weixin.menu.WeixinMenu;
-import com.icoffee.weixin.service.IWeixinService;
+import com.icoffee.weixin.mp.service.IWeixinService;
 
 @Controller
 @RequestMapping("/test")

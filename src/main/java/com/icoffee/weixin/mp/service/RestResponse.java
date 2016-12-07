@@ -1,4 +1,4 @@
-package com.icoffee.weixin.admin;
+package com.icoffee.weixin.mp.service;
 
 /**
  * the return message from rest service

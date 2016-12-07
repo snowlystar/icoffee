@@ -1,4 +1,4 @@
-package com.icoffee.weixin.server;
+package com.icoffee.weixin.mp.server;
 
 /**
  * <xml>

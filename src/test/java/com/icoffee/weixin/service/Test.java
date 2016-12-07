@@ -1,5 +1,9 @@
 package com.icoffee.weixin.service;
 
+import com.icoffee.weixin.mp.service.IWeixinService;
+import com.icoffee.weixin.mp.service.WeixinServiceImpl;
+import com.icoffee.weixin.mp.service.WeixinToken;
+
 public class Test {
 	private static IWeixinService weixinService;
 	public static void main(String args[]) {

@@ -22,7 +22,7 @@
 -->
 <mapping>
 	<description>Basic mapping example</description>
-	<class name="com.icoffee.weixin.server.WeixinMessage"
+	<class name="com.icoffee.weixin.mp.server.WeixinMessage"
 		auto-complete="true">
 		<map-to xml="xml" />
 		<field name="toUserName" type="string">
