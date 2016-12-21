@@ -33,7 +33,7 @@ import com.icoffee.weixin.menu.WeixinMenu;
 @Scope("singleton")
 @Component("weixinService")
 public class WeixinServiceImpl implements IWeixinService {
-	RestTemplate restTemplate = new RestTemplate();
+	private RestTemplate restTemplate = new RestTemplate();
 
 	//
 	WeixinToken currentToken;

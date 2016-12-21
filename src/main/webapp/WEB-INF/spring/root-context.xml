@@ -24,6 +24,10 @@
 		</constructor-arg>
 	</bean>
     <bean id="weixinMessageCastorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
-    	<property name="mappingLocation" value="classpath:castor-mapping.xml" />
+    	<property name="mappingLocation" value="/com/icoffee/weixin/mp/server/castor-mapping.xml" />
     </bean>
+    <bean id="weixinPayMessageCastorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
+    	<property name="mappingLocation" value="/com/icoffee/weixin/mp/server/castor-mapping.xml" />
+    </bean>
+    
 </beans>

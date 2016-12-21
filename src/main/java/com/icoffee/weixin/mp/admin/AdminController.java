@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.client.RestTemplate;
 
 import com.icoffee.weixin.material.MaterialCount;
 import com.icoffee.weixin.material.MaterialItem;
@@ -22,8 +21,6 @@ import com.icoffee.weixin.mp.service.RestResponse;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-	RestTemplate restTemplate = new RestTemplate();
-
 	@Autowired(required=true)
 	@Qualifier("weixinService")
 	private IWeixinService weixinService;
