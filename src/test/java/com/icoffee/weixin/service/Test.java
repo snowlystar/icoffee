@@ -1,13 +1,13 @@
 package com.icoffee.weixin.service;
 
-import com.icoffee.weixin.mp.service.IWeixinService;
-import com.icoffee.weixin.mp.service.WeixinServiceImpl;
+import com.icoffee.weixin.mp.service.IWeixinMpService;
+import com.icoffee.weixin.mp.service.WeixinMpServiceImpl;
 import com.icoffee.weixin.mp.service.WeixinToken;
 
 public class Test {
-	private static IWeixinService weixinService;
+	private static IWeixinMpService weixinService;
 	public static void main(String args[]) {
-		weixinService = new WeixinServiceImpl();
+		weixinService = new WeixinMpServiceImpl();
 		refreshToken();
 		System.out.println(weixinService.getToken());
 	}

@@ -24,11 +24,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/weixin")
 public class WeixinController {
 	@Autowired
-	@Qualifier("weixinMessageCastorMarshaller")
+	@Qualifier("weixinMpMessageCastorMarshaller")
 	private Marshaller marshaller;
 
 	@Autowired
-	@Qualifier("weixinMessageCastorMarshaller")
+	@Qualifier("weixinMpMessageCastorMarshaller")
 	private Unmarshaller unmarshaller;
 
 	/**

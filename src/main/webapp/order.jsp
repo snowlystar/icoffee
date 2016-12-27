@@ -8,7 +8,7 @@
 </head>
 <body>
 	<form action="/weixinpay/generate_qr" method="POST">
-	<input name=" 
+
 	</form>
 
 </body>

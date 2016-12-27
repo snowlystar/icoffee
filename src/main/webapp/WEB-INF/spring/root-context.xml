@@ -23,11 +23,11 @@
 			value="efdc85357888bed49f6797dced8074bf">
 		</constructor-arg>
 	</bean>
-    <bean id="weixinMessageCastorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
+    <bean id="weixinMpMessageCastorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
     	<property name="mappingLocation" value="/com/icoffee/weixin/mp/server/castor-mapping.xml" />
     </bean>
     <bean id="weixinPayMessageCastorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
-    	<property name="mappingLocation" value="/com/icoffee/weixin/mp/server/castor-mapping.xml" />
+    	<property name="mappingLocation" value="/com/icoffee/weixin/pay/service/castor-mapping.xml" />
     </bean>
     
 </beans>

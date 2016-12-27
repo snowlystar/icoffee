@@ -6,7 +6,7 @@ public class UnifiedOrderRequest implements IUnifiedOrderRequest {
 	private String device_info;  // 否 String(32) 013467007045764 自定义参数，可以为终端设备号(门店号或收银设备ID)，PC网页或公众号内支付可以传"WEB"
 	private String nonce_str; // 是 String(32) 5K8264ILTKCH16CQ2502SI8ZNMTM67VS 随机字符串，长度要求在32位以内。推荐随机数生成算法 
 	private String sign; // 是 String(32) C380BEC2BFD727A4B6845133519F3AD6 通过签名算法计算得出的签名值，详见签名生成算法
-	private String sign_type; // 否 String(32) HMAC-SHA256 签名类型，默认为MD5，支持HMAC-SHA256和MD5。
+	private String sign_type = "MD5"; // 否 String(32) HMAC-SHA256 签名类型，默认为MD5，支持HMAC-SHA256和MD5。
 	private String body; // 是 String(128) 腾讯充值中心-QQ会员充值  商品简单描述，该字段请按照规范传递，具体请见参数规定
 	private String detail; // 否 String(6000) 商品详细列表，使用Json格式，传输签名前请务必使用CDATA标签将JSON文本串保护起来。
 	private String attach; // 否 String(127) 深圳分店 附加数据，在查询API和支付通知中原样返回，可作为自定义参数使用。
@@ -92,16 +92,12 @@ public class UnifiedOrderRequest implements IUnifiedOrderRequest {
 	public void setSign(String sign) {
 		this.sign = sign;
 	}
-	/* (non-Javadoc)
-	 * @see com.icoffee.weixin.pay.service.IUnifiedOrderRequest#getSign_type()
-	 */
+	
 	@Override
 	public String getSign_type() {
 		return sign_type;
 	}
-	/* (non-Javadoc)
-	 * @see com.icoffee.weixin.pay.service.IUnifiedOrderRequest#setSign_type(java.lang.String)
-	 */
+	
 	@Override
 	public void setSign_type(String sign_type) {
 		this.sign_type = sign_type;

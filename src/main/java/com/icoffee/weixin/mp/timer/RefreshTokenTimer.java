@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import com.icoffee.weixin.mp.service.IWeixinService;
+import com.icoffee.weixin.mp.service.IWeixinMpService;
 
 @Component
 public class RefreshTokenTimer {
@@ -18,12 +18,12 @@ public class RefreshTokenTimer {
 	private String appsecret;
 	
 	@Autowired
-	@Qualifier("weixinService")
-	private IWeixinService weixinService;
+	@Qualifier("weixinMpService")
+	private IWeixinMpService weixinMpService;
 
 	
 	@Scheduled(fixedDelay=10800000, initialDelay=5000)
 	void refreshToken() {
-		weixinService.refreshToken(appid, appsecret);
+		weixinMpService.refreshToken(appid, appsecret);
 	}
 }

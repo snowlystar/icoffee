@@ -24,7 +24,7 @@ import com.icoffee.weixin.menu.Button;
 import com.icoffee.weixin.menu.ClickButton;
 import com.icoffee.weixin.menu.ViewButton;
 import com.icoffee.weixin.menu.WeixinMenu;
-import com.icoffee.weixin.mp.service.IWeixinService;
+import com.icoffee.weixin.mp.service.IWeixinMpService;
 
 @Controller
 @RequestMapping("/test")
@@ -33,7 +33,7 @@ public class TestController {
 
 	@Autowired(required=true)
 	@Qualifier("weixinService")
-	private IWeixinService weixinService;
+	private IWeixinMpService weixinService;
 
 	@RequestMapping(value="/createMenu")
 	public void createMenu(HttpServletResponse response) throws IOException {
