@@ -39,7 +39,9 @@ public class WeixinMpServiceImpl implements IWeixinMpService {
 	WeixinToken currentToken;
 
 	@Override
-	public WeixinToken refreshToken(String appid, String secret) {
+	public WeixinToken refreshToken() {
+		String appid = getWeixinAppid();
+		String secret = getWeixinAppSecret();
 		String returnstring = restTemplate.getForObject(
 				"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={appid}&secret={secret}",
 				String.class, appid, secret);
@@ -248,5 +250,20 @@ public class WeixinMpServiceImpl implements IWeixinMpService {
 		}
 
 		return ret;
+	}
+
+	@Override
+	public String getWeixinPayAPIKey() {
+		return "icoffeetechzhangshenmingpandan16";
+	}
+
+	@Override
+	public String getWeixinAppid() {
+		return "wxa1a8fc745855c04d";
+	}
+
+	@Override
+	public String getWeixinAppSecret() {
+		return "efdc85357888bed49f6797dced8074bf";
 	}
 }

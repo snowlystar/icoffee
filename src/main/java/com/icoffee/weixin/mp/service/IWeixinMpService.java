@@ -7,11 +7,30 @@ import com.icoffee.weixin.material.MaterialItem;
 import com.icoffee.weixin.material.MaterialType;
 
 public interface IWeixinMpService {
+	
+	/**
+	 * API key used to produce message signature
+	 * @return
+	 */
+	String getWeixinPayAPIKey();
+	
+	/**
+	 * Weixin appid
+	 * @return
+	 */
+	String getWeixinAppid();
+	
+	/**
+	 * Weixin mp app secret;
+	 * @return
+	 */
+	String getWeixinAppSecret();
+	
 	/**
 	 * Ë¢ÐÂtoken and store the token into cache
 	 * @return
 	 */
-	WeixinToken refreshToken(String appid, String secret);
+	WeixinToken refreshToken();
 	
 	/**
 	 * get token from cache.

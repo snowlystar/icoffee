@@ -23,23 +23,24 @@ public class WeixinPayServiceImpl implements WeixinPayService {
 	RestTemplate restTemplate = new RestTemplate();
 	
 	@Autowired
-	@Qualifier("weixinPayMessageCastorMarshaller")
-	private Marshaller marshaller;
+	@Qualifier("weixinMpRequestMessageCastorMarshaller")
+	private Marshaller requestMarshaller;
 
 	@Autowired
-	@Qualifier("weixinPayMessageCastorMarshaller")
-	private Unmarshaller unmarshaller;
+	@Qualifier("weixinPayResponseMessageCastorMarshaller")
+	private Unmarshaller responseUnmarshaller;
 	
 	private static final String URL_UNIFIED_ORDER = "https://api.mch.weixin.qq.com/pay/unifiedorder";
 	@Override
 	public IUnifiedOrderResponse createUnifiedOrder(IUnifiedOrderRequest request) {
 		try {
+			// TODO  get mpkey from weinxin servcie
 			String md5 = signUtil.getSignResult(request, "aaaaaaa");
 			request.setSign(md5);
 			
 			final StringWriter writer = new StringWriter();
 			Result xmlresult = new StreamResult(writer);
-			marshaller.marshal(request, xmlresult);
+			requestMarshaller.marshal(request, xmlresult);
 			return restTemplate.execute(URL_UNIFIED_ORDER, HttpMethod.POST, new RequestCallback() {
 				@Override
 				public void doWithRequest(ClientHttpRequest request) throws IOException {
@@ -49,7 +50,7 @@ public class WeixinPayServiceImpl implements WeixinPayService {
 			new ResponseExtractor<IUnifiedOrderResponse>() {
 				@Override
 				public IUnifiedOrderResponse extractData(ClientHttpResponse response) throws IOException {
-					IUnifiedOrderResponse retmessage = (IUnifiedOrderResponse)unmarshaller.unmarshal(new StreamSource(response.getBody()));
+					IUnifiedOrderResponse retmessage = (IUnifiedOrderResponse)responseUnmarshaller.unmarshal(new StreamSource(response.getBody()));
 					return retmessage;
 				}
 			});

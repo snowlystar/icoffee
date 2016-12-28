@@ -13,7 +13,7 @@ public class Test {
 	}
 	
 	private static WeixinToken refreshToken() {
-		return weixinService.refreshToken("wxa1a8fc745855c04d", "efdc85357888bed49f6797dced8074bf");
+		return weixinService.refreshToken();
 	}
 
 }

@@ -10,20 +10,12 @@ import com.icoffee.weixin.mp.service.IWeixinMpService;
 @Component
 public class RefreshTokenTimer {
 	@Autowired
-	@Qualifier("appid")
-	private String appid;
-	
-	@Autowired
-	@Qualifier("appsecret")
-	private String appsecret;
-	
-	@Autowired
 	@Qualifier("weixinMpService")
 	private IWeixinMpService weixinMpService;
 
 	
 	@Scheduled(fixedDelay=10800000, initialDelay=5000)
 	void refreshToken() {
-		weixinMpService.refreshToken(appid, appsecret);
+		weixinMpService.refreshToken();
 	}
 }
