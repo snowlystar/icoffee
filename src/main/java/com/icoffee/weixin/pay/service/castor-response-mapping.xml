@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+	<description>Weixin pay message-xml map</description>
+	<class name="com.icoffee.weixin.pay.service.WeixinPayMessage" auto-complete="true">
+		<map-to xml="xml" />
+		<field name="toUserName" type="string">
+			<bind-xml name="ToUserName" node="element" />
+		</field>
+	</class>
+</mapping>
