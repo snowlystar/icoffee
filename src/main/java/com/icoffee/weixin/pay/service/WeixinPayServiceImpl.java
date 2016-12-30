@@ -18,9 +18,15 @@ import org.springframework.web.client.RequestCallback;
 import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestTemplate;
 
+import com.icoffee.weixin.mp.service.IWeixinMpService;
+
 public class WeixinPayServiceImpl implements WeixinPayService {
 	private WeixinPaySignUtil signUtil = new WeixinPaySignUtil();
 	RestTemplate restTemplate = new RestTemplate();
+
+	@Autowired
+	@Qualifier("weixinMpService")
+	private IWeixinMpService weixinMpService;
 	
 	@Autowired
 	@Qualifier("weixinMpRequestMessageCastorMarshaller")
@@ -34,8 +40,8 @@ public class WeixinPayServiceImpl implements WeixinPayService {
 	@Override
 	public IUnifiedOrderResponse createUnifiedOrder(IUnifiedOrderRequest request) {
 		try {
-			// TODO  get mpkey from weinxin servcie
-			String md5 = signUtil.getSignResult(request, "aaaaaaa");
+			String apikey = weixinMpService.getWeixinPayAPIKey();
+			String md5 = signUtil.getSignResult(request, apikey);
 			request.setSign(md5);
 			
 			final StringWriter writer = new StringWriter();

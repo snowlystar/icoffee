@@ -1,5 +1,6 @@
 package com.icoffee.weixin.pay.service;
 
+@Deprecated
 public class UnifiedOrderRequest implements IUnifiedOrderRequest {
 	private String appid;   // 是 String(32) wxd678efh567hg6787 微信支付分配的公众账号ID（企业号corpid即为此appId） 
 	private String mch_id;  // 是 微信支付分配的商户号

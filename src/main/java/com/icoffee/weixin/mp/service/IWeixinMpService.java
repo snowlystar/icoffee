@@ -27,6 +27,12 @@ public interface IWeixinMpService {
 	String getWeixinAppSecret();
 	
 	/**
+	 * Weixin pay merchant id;  146731102
+	 * @return
+	 */
+	String getWeixinPayMchid();
+	
+	/**
 	 * Ë¢ÐÂtoken and store the token into cache
 	 * @return
 	 */

@@ -266,4 +266,9 @@ public class WeixinMpServiceImpl implements IWeixinMpService {
 	public String getWeixinAppSecret() {
 		return "efdc85357888bed49f6797dced8074bf";
 	}
+
+	@Override
+	public String getWeixinPayMchid() {
+		return "1406731102";
+	}
 }
