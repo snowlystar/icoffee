@@ -7,6 +7,7 @@
 <title>模拟一个订单的过程</title>
 </head>
 <body>
+dddddddddddddddddd
 	<form action="/weixinpay/generate_qr" method="POST">
 
 	</form>

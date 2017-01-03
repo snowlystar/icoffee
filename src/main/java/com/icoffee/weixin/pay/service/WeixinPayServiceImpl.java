@@ -14,12 +14,14 @@ import org.springframework.http.client.ClientHttpRequest;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.oxm.Marshaller;
 import org.springframework.oxm.Unmarshaller;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RequestCallback;
 import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestTemplate;
 
 import com.icoffee.weixin.mp.service.IWeixinMpService;
 
+@Component("weixinPayService")
 public class WeixinPayServiceImpl implements WeixinPayService {
 	private WeixinPaySignUtil signUtil = new WeixinPaySignUtil();
 	RestTemplate restTemplate = new RestTemplate();
@@ -29,7 +31,7 @@ public class WeixinPayServiceImpl implements WeixinPayService {
 	private IWeixinMpService weixinMpService;
 	
 	@Autowired
-	@Qualifier("weixinMpRequestMessageCastorMarshaller")
+	@Qualifier("weixinPayRequestMessageCastorMarshaller")
 	private Marshaller requestMarshaller;
 
 	@Autowired
@@ -41,8 +43,8 @@ public class WeixinPayServiceImpl implements WeixinPayService {
 	public IUnifiedOrderResponse createUnifiedOrder(IUnifiedOrderRequest request) {
 		try {
 			String apikey = weixinMpService.getWeixinPayAPIKey();
-			String md5 = signUtil.getSignResult(request, apikey);
-			request.setSign(md5);
+			String signResult = signUtil.getSignResult(request, apikey);
+			request.setSign(signResult);
 			
 			final StringWriter writer = new StringWriter();
 			Result xmlresult = new StreamResult(writer);

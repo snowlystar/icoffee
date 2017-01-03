@@ -9,16 +9,21 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
-	<context:annotation-config></context:annotation-config>
+	<context:annotation-config/>
 	<task:annotation-driven />
 	<context:component-scan base-package="com.icoffee.weixin.mp.timer"/>
 	<context:component-scan base-package="com.icoffee.weixin.mp.service"/>
-	
-	<bean id="weixinMpRequestMessageCastorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
-    	<property name="mappingLocation" value="/com/icoffee/weixin/mp/server/castor-request-mapping.xml" />
+	<context:component-scan base-package="com.icoffee.weixin.pay.service"/>
+
+	<bean id="weixinMpMessageCastorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
+    	<property name="mappingLocation" value="classpath:/com/icoffee/weixin/mp/server/castor-mapping.xml" />
+    </bean>
+    	
+	<bean id="weixinPayRequestMessageCastorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
+    	<property name="mappingLocation" value="classpath:/com/icoffee/weixin/pay/service/castor-request-mapping.xml" />
     </bean>
     <bean id="weixinPayResponseMessageCastorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
-    	<property name="mappingLocation" value="/com/icoffee/weixin/pay/service/castor-response-mapping.xml" />
+    	<property name="mappingLocation" value="classpath:/com/icoffee/weixin/pay/service/castor-response-mapping.xml" />
     </bean>
     
 </beans>

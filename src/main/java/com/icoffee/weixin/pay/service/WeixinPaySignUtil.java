@@ -74,14 +74,14 @@ public class WeixinPaySignUtil {
 				signString.append(prop).append('=').append(value.toString());
 			}
 		}
-		signString.append("key=").append(weixinMpKey);
+		signString.append("&key=").append(weixinMpKey);
 		String md5 = getMD5String(signString.toString());
 		return md5;
 	}
 	
 	private String getMD5String(String message) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 		MessageDigest md = MessageDigest.getInstance("MD5");
-		byte[] digest =	md.digest(message.getBytes("UTF=8"));
+		byte[] digest =	md.digest(message.getBytes("UTF-8"));
 		
 		StringBuffer md5result = new StringBuffer();
 		for (byte b : digest) {

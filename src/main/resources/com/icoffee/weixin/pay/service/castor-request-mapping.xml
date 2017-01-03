@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+	private String goods_tag; // 否 String(32) WXG
+	private String notify_url; // 是 String(256) http://www.weixin.qq.com/wxpay/pay.php 异步接收微信支付结果通知的回调地址，通知url必须为外网可访问的url，不能携带参数。
+	private String trade_type; // 是 String(16) JSAPI 取值如下：JSAPI，NATIVE，APP等，说明详见参数规定
+	private String product_id; // 否 String(32) 12235413214070356458058 trade_type=NATIVE时（即扫码支付），此参数必传。此参数为二维码中包含的商品ID，商户自行定义。
+	private String limit_pay; // 否 String(32) no_credit 上传此参数no_credit-可限制用户不能使用信用卡支付
+	private String openid; // 否 String(128) oUpF8uMuAJO_M2pxb1Q9zNjWeS6o trade_type=JSAPI时（即公众号支付），此参数必传，此参数为微信用户在商户对应appid下的唯一标识。openid如何获取，可参考【获取openid】。企业号请使用【企业号OAuth2.0接口】获取企业号内成员userid，再调用【企业号userid转openid接口】进行转换 
+	 -->
+
+<mapping>
+	<description>Weixin pay message-xml map</description>
+	<class name="com.icoffee.weixin.pay.service.WeixinPayRequest" auto-complete="true">
+		<map-to xml="xml" />
+		<field name="appid" type="string">
+			<bind-xml name="appid" node="element" />
+		</field>
+		<field name="mch_id" type="string">
+			<bind-xml name="mch_id" node="element" />
+		</field>
+		<field name="device_info" type="string">
+			<bind-xml name="device_info" node="element" />
+		</field>
+		<field name="nonce_str" type="string">
+			<bind-xml name="nonce_str" node="element" />
+		</field>
+		<field name="sign" type="string">
+			<bind-xml name="sign" node="element" />
+		</field>
+		<field name="sign_type" type="string">
+			<bind-xml name="sign_type" node="element" />
+		</field>
+		<field name="body" type="string">
+			<bind-xml name="body" node="element" />
+		</field>
+		<field name="detail" type="string">
+			<bind-xml name="detail" node="element" />
+		</field>
+		<field name="attach" type="string">
+			<bind-xml name="attach" node="element" />
+		</field>
+		<field name="out_trade_no" type="string">
+			<bind-xml name="out_trade_no" node="element" />
+		</field>
+		<field name="fee_type" type="string">
+			<bind-xml name="fee_type" node="element" />
+		</field>
+		<field name="total_fee" type="int">
+			<bind-xml name="total_fee" node="element" />
+		</field>
+		<field name="spbill_create_ip" type="string">
+			<bind-xml name="spbill_create_ip" node="element" />
+		</field>
+		<field name="time_start" type="string">
+			<bind-xml name="time_start" node="element" />
+		</field>
+		<field name="time_expire" type="string">
+			<bind-xml name="time_expire" node="element" />
+		</field>
+		<field name="goods_tag" type="string">
+			<bind-xml name="goods_tag" node="element" />
+		</field>
+		<field name="notify_url" type="string">
+			<bind-xml name="notify_url" node="element" />
+		</field>
+		<field name="trade_type" type="string">
+			<bind-xml name="trade_type" node="element" />
+		</field>
+		<field name="product_id" type="string">
+			<bind-xml name="product_id" node="element" />
+		</field>
+		<field name="limit_pay" type="string">
+			<bind-xml name="limit_pay" node="element" />
+		</field>
+		<field name="openid" type="string">
+			<bind-xml name="openid" node="element" />
+		</field>
+	</class>
+</mapping>
